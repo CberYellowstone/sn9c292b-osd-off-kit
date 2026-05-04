@@ -1,0 +1,18 @@
+api:
+  listen: ":1984"
+
+rtsp:
+  listen: ":8554"
+
+webrtc:
+  listen: ":8555"
+
+ffmpeg:
+  v4l2_mjpeg_1080p30: "-f v4l2 -input_format mjpeg -video_size 1920x1080 -framerate 30 -i {input}"
+  hevc_qsv: "-vf format=nv12 -c:v hevc_qsv -low_power 1 -preset medium -b:v 6000k -maxrate 8000k -bufsize 4000k -g 30 -bf 0 -gpb 0 -forced_idr 1 -async_depth 1 -low_delay_brc 1"
+
+streams:
+  sn9c292b:
+    - v4l2:device?video=/dev/video2&input_format=h264&video_size=1920x1080&framerate=30
+  sn9c292b_hevc_qsv:
+    - ffmpeg:/dev/video0#input=v4l2_mjpeg_1080p30#video=hevc_qsv

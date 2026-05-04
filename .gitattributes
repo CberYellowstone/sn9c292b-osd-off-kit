@@ -1,0 +1,14 @@
+*.src binary
+*.bin binary
+*.exe binary
+*.dll binary
+*.zip binary
+*.jpg binary
+*.i64 binary
+*.asm text
+*.c text
+*.h text
+*.md text
+*.py text
+*.sh text eol=lf
+

@@ -1,0 +1,7 @@
+[Unit]
+Description=SN9C292B OSD off hotplug helper
+Documentation=https://go2rtc.org/
+
+[Service]
+Type=oneshot
+ExecStart=/opt/sn9c292b/osd-off.sh

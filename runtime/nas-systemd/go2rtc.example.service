@@ -1,0 +1,16 @@
+[Unit]
+Description=go2rtc camera streaming service
+Documentation=https://go2rtc.org/
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+ExecStartPre=/opt/sn9c292b/osd-off.sh
+ExecStart=/opt/go2rtc/go2rtc -config /etc/go2rtc/go2rtc.yaml
+Restart=always
+RestartSec=3
+WorkingDirectory=/etc/go2rtc
+
+[Install]
+WantedBy=multi-user.target
