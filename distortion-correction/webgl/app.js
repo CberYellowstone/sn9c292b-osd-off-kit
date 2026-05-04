@@ -286,16 +286,30 @@ function shouldHandleToolbarShortcut(event) {
   return !(target instanceof HTMLInputElement || target instanceof HTMLSelectElement);
 }
 
+function hasLocalCameraApi() {
+  return Boolean(navigator.mediaDevices?.getUserMedia);
+}
+
 async function listCameras() {
+  ui.cameraSelect.replaceChildren();
+
+  if (!navigator.mediaDevices?.enumerateDevices) {
+    ui.cameraSelect.appendChild(new Option("本机摄像头不可用", ""));
+    ui.cameraSelect.disabled = true;
+    ui.startButton.disabled = true;
+    return [];
+  }
+
   const devices = await navigator.mediaDevices.enumerateDevices();
   const videoDevices = devices.filter((device) => device.kind === "videoinput");
-  ui.cameraSelect.replaceChildren();
   for (const [index, device] of videoDevices.entries()) {
     const option = document.createElement("option");
     option.value = device.deviceId;
     option.textContent = device.label || `camera ${index + 1}`;
     ui.cameraSelect.appendChild(option);
   }
+  ui.cameraSelect.disabled = false;
+  ui.startButton.disabled = !hasLocalCameraApi();
   if (selectedDeviceId) {
     ui.cameraSelect.value = selectedDeviceId;
   }
@@ -416,6 +430,10 @@ function draw(now) {
 
 async function start() {
   try {
+    if (!hasLocalCameraApi()) {
+      setStatus("本机摄像头需要 HTTPS 或 localhost；当前地址可使用远端流");
+      return;
+    }
     setStatus("请求摄像头权限");
     await openCamera(ui.cameraSelect.value || "");
   } catch (error) {
@@ -461,17 +479,17 @@ function wireUi() {
 }
 
 async function main() {
-  if (!navigator.mediaDevices?.getUserMedia) {
-    setStatus("当前浏览器不支持 getUserMedia");
-    return;
-  }
   setStatus("加载 GLSL");
   const fragmentSource = await loadShaderSource(FRAGMENT_SHADER_URL);
   initGl(fragmentSource);
   wireUi();
   await listCameras();
   requestAnimationFrame(draw);
-  setStatus("点击启动摄像头");
+  if (hasLocalCameraApi()) {
+    setStatus("点击启动摄像头，或连接远端流");
+  } else {
+    setStatus("当前地址不是安全上下文，本机摄像头不可用；可连接远端流");
+  }
 }
 
 main().catch((error) => {
