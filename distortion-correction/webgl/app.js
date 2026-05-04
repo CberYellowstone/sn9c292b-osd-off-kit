@@ -286,6 +286,24 @@ function shouldHandleToolbarShortcut(event) {
   return !(target instanceof HTMLInputElement || target instanceof HTMLSelectElement);
 }
 
+function getWebRtcVideoMimeTypes() {
+  const codecs = globalThis.RTCRtpReceiver?.getCapabilities?.("video")?.codecs ?? [];
+  return new Set(codecs.map((codec) => codec.mimeType.toLowerCase()));
+}
+
+function supportsWebRtcH265() {
+  const types = getWebRtcVideoMimeTypes();
+  return types.has("video/h265") || types.has("video/hevc");
+}
+
+function needsH265WebRtc(source) {
+  return /(?:hevc|h265)/i.test(source);
+}
+
+function h265FallbackSource(source) {
+  return source.replace(/(?:hevc|h265)_qsv/i, "h264_qsv");
+}
+
 function hasLocalCameraApi() {
   return Boolean(navigator.mediaDevices?.getUserMedia);
 }
@@ -381,6 +399,13 @@ function handleRemoteVideoReady(width, height) {
   ui.resolution.textContent = `source: ${sourceWidth}x${sourceHeight} remote`;
 }
 
+function selectRemoteSource(source) {
+  ui.remoteSource.value = source;
+  if ([...ui.remoteStreamSelect.options].some((option) => option.value === source)) {
+    ui.remoteStreamSelect.value = source;
+  }
+}
+
 async function refreshRemoteStreams() {
   const baseUrl = normalizeHttpBase(ui.remoteBase.value);
   ui.remoteBase.value = baseUrl.href.replace(/\/$/, "");
@@ -408,12 +433,19 @@ async function connectRemoteStream() {
     stopStream();
     const baseUrl = normalizeHttpBase(ui.remoteBase.value);
     ui.remoteBase.value = baseUrl.href.replace(/\/$/, "");
-    const source = ui.remoteSource.value.trim();
+    let source = ui.remoteSource.value.trim();
+    let statusPrefix = "";
+    if (needsH265WebRtc(source) && !supportsWebRtcH265()) {
+      const fallback = h265FallbackSource(source);
+      selectRemoteSource(fallback);
+      source = fallback;
+      statusPrefix = "当前浏览器 WebRTC 未声明 H.265，已回退到 H.264；";
+    }
     remoteClient = new Go2RtcWebRtcClient({
       baseUrl,
       source,
       video: ui.video,
-      onStatus: setStatus,
+      onStatus: (message) => setStatus(`${statusPrefix}${message}`),
       onVideoReady: handleRemoteVideoReady,
     });
     remoteClient.connect();

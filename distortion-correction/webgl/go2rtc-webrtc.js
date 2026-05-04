@@ -149,10 +149,18 @@ export class Go2RtcWebRtcClient {
         }
         break;
       case "error":
-        this.onStatus(message.value || "远端流错误");
+        this.onStatus(formatGo2RtcError(message.value));
         break;
     }
   }
+}
+
+function formatGo2RtcError(value) {
+  const message = value || "远端流错误";
+  if (/codecs not matched/i.test(message) && /H265/i.test(message)) {
+    return "当前浏览器 WebRTC offer 不包含 H.265，请改用 H.264 流或升级/开启 H.265 WebRTC";
+  }
+  return message;
 }
 
 export function normalizeHttpBase(value) {
