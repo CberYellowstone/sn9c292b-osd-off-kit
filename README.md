@@ -85,6 +85,9 @@ research/
 
 third_party/
   sonixsdk/                      SONiX SDK 参考文件
+  sonix_windows_driver/          SONiX Windows driver 相关文件
+
+docs/reference/                  SN9C292B 数据手册
 ```
 
 ## 关键文件 SHA256

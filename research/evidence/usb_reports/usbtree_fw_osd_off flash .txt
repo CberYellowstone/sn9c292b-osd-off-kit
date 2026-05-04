@@ -1,0 +1,107 @@
+
+    =========================== USB Port1 ===========================
+
+Connection Status        : 0x00 (No device is connected)
+Port Chain               : 2-5-1
+Properties               : 0x01
+ IsUserConnectable       : yes
+ PortIsDebugCapable      : no
+ PortHasMultiCompanions  : no
+ PortConnectorIsTypeC    : no
+ConnectionIndex          : 0x01 (Port 1)
+CompanionIndex           : 0
+ CompanionHubSymLnk      : USB#VID_05E3&PID_0616#5&521a615&0&21#{f18a0e88-c30c-11d0-8815-00a0c906bed8}
+ CompanionPortNumber     : 0x01 (Port 1)
+ -> CompanionPortChain   : 2-21-1
+
+      ========================== Summary =========================
+Vendor ID                : 0x0C45 (Sonix Technology Co., Ltd.)
+Product ID               : 0x6366
+Serial                   : "SN0001"
+USB Version              : 2.0 (480 Mbit/s)
+Port maximum Speed       : High-Speed (Companion Port 2-21-1 is doing the SuperSpeed)
+Device maximum Speed     : High-Speed
+Device Connection Speed  : High-Speed
+Device Manager Problem   : 10 (CM_PROB_FAILED_START)
+Used Endpoints           : 1
+
+      ======================== USB Device ========================
+
+        +++++++++++++++++ Device Information ++++++++++++++++++
+Device Description       : USB Composite Device
+Device Path              : \\?\USB#VID_0C45&PID_6366#SN0001#{a5dcbf10-6530-11d2-901f-00c04fb951ed} (GUID_DEVINTERFACE_USB_DEVICE)
+Kernel Name              : \Device\USBPDO-9
+Device ID                : USB\VID_0C45&PID_6366\SN0001
+Hardware IDs             : USB\VID_0C45&PID_6366&REV_0100 USB\VID_0C45&PID_6366
+Driver KeyName           : {36fc9e60-c465-11cf-8056-444553540000}\0026 (GUID_DEVCLASS_USB)
+Driver                   : \SystemRoot\System32\drivers\usbccgp.sys (Version: 10.0.26100.3912  Date: 2025-05-30  Company: Microsoft Corporation)
+Driver Inf               : C:\WINDOWS\inf\usb.inf
+Legacy BusType           : PNPBus
+Class                    : USB
+Class GUID               : {36fc9e60-c465-11cf-8056-444553540000} (GUID_DEVCLASS_USB)
+Service                  : usbccgp
+Enumerator               : USB
+Location Info            : Port_#0001.Hub_#0005
+Address                  : 1
+Manufacturer Info        : (Standard USB Host Controller)
+Capabilities             : 0x14 (Removable, UniqueID)
+Status                   : 0x01806400 (DN_HAS_PROBLEM, DN_DISABLEABLE, DN_REMOVABLE, DN_NT_ENUMERATOR, DN_NT_DRIVER)
+Problem Code             : 10 (CM_PROB_FAILED_START)
+Address                  : 1
+First Install Date       : 2025-08-07 06:21:51
+Last Arrival Date        : 2025-08-10 18:13:53
+EnhancedPowerMgmtEnabled : 0
+Power State              : D3 (supported: D0, D2, D3, wake from D0, wake from D2)
+
+        +++++++++++++++++ Registry USB Flags +++++++++++++++++
+HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\usbflags\0C4563660100
+ osvc                    : REG_BINARY 00 00
+
+        ---------------- Connection Information ---------------
+Connection Index         : 0x01 (Port 1)
+Connection Status        : 0x00 (NoDeviceConnected)
+Current Config Value     : 0x00 (Configuration 0)
+Device Address           : 0x08 (8)
+Is Hub                   : 0x00 (no)
+Device Bus Speed         : 0x02 (High-Speed)
+Number of open Pipes     : 0x00 (0 pipes to data endpoints)
+Data (HexDump)           : 01 00 00 00 12 01 00 02 EF 02 01 40 45 0C 66 63   ...........@E.fc
+                           00 01 02 01 03 01 00 02 00 08 00 00 00 00 00 00   ................
+                           00 00 00                                          ...
+
+        --------------- Connection Information V2 -------------
+Connection Index         : 0x01 (1)
+Length                   : 0x10 (16 bytes)
+SupportedUsbProtocols    : 0x03
+ Usb110                  : 1 (yes, port supports USB 1.1)
+ Usb200                  : 1 (yes, port supports USB 2.0)
+ Usb300                  : 0 (no, port not supports USB 3.0) -> but Companion Port 2-21-1 does
+ ReservedMBZ             : 0x00
+Flags                    : 0x00
+ DevIsOpAtSsOrHigher     : 0 (Device is not operating at SuperSpeed or higher)
+ DevIsSsCapOrHigher      : 0 (Device is not SuperSpeed capable or higher)
+ DevIsOpAtSsPlusOrHigher : 0 (Device is not operating at SuperSpeedPlus or higher)
+ DevIsSsPlusCapOrHigher  : 0 (Device is not SuperSpeedPlus capable or higher)
+ ReservedMBZ             : 0x00
+Data (HexDump)           : 01 00 00 00 10 00 00 00 03 00 00 00 00 00 00 00   ................
+
+    ---------------------- Device Descriptor ----------------------
+bLength                  : 0x12 (18 bytes)
+bDescriptorType          : 0x01 (Device Descriptor)
+bcdUSB                   : 0x200 (USB Version 2.0)
+bDeviceClass             : 0xEF (Miscellaneous)
+bDeviceSubClass          : 0x02
+bDeviceProtocol          : 0x01 (IAD - Interface Association Descriptor)
+bMaxPacketSize0          : 0x40 (64 bytes)
+idVendor                 : 0x0C45 (Sonix Technology Co., Ltd.)
+idProduct                : 0x6366
+bcdDevice                : 0x0100
+iManufacturer            : 0x02 (String Descriptor 2)
+iProduct                 : 0x01 (String Descriptor 1)
+iSerialNumber            : 0x03 (String Descriptor 3)
+bNumConfigurations       : 0x01 (1 Configuration)
+Data (HexDump)           : 12 01 00 02 EF 02 01 40 45 0C 66 63 00 01 02 01   .......@E.fc....
+                           03 01                                             ..
+
+      -------------------- String Descriptors -------------------
+String descriptors are not available  (because the device has problem code CM_PROB_FAILED_START)

@@ -39,7 +39,10 @@
 ## 研究资料
 
 - `research/evidence/*.md`
+- `research/evidence/usb_reports/`
 - `research/tools/*.py`
+- `research/tools/sonix_burnerlib_probe.cpp`
+- `research/tools/sonix_burnerlib_probe.exe`
 - `research/checksum/*.py`
 
 ## SONiX SDK 参考
@@ -48,6 +51,8 @@
 - `third_party/sonixsdk/SnCamDll.dll`
 - `third_party/sonixsdk/Sonix UVC SDK 2.12.exe`
 - `third_party/sonixsdk/Sonix Camera SDK.exe`
+- `third_party/sonix_windows_driver/`
+- `docs/reference/SN9C292B_Datasheet_v1.61.pdf`
 
 ## 校验
 

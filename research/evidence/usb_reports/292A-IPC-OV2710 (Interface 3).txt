@@ -1,0 +1,27 @@
+
+        +++++++++++++++++ Device Information ++++++++++++++++++
+Friendly Name            : 292A-IPC-OV2710
+Device Description       : 292A-IPC-OV2710 (Interface 3)
+Device Path 1            : \\?\USB#VID_0C45&PID_6366&MI_03#6&183af011&0&0003#{c114a046-60a8-4937-bfe6-6c373a80274f}
+Device Path 2            : \\?\USB#VID_0C45&PID_6366&MI_03#6&183af011&0&0003#{dee824ef-729b-4a0e-9c14-b7117d33a817} (GUID_DEVINTERFACE_WINUSB)
+Kernel Name              : \Device\000000e5
+Device ID                : USB\VID_0C45&PID_6366&MI_03\6&183AF011&0&0003
+Hardware IDs             : USB\VID_0C45&PID_6366&REV_0100&MI_03 USB\VID_0C45&PID_6366&MI_03
+Driver KeyName           : {88bae032-5a81-49f0-bc3d-a4ff138216d6}\0000 (GUID_DEVCLASS_USBDEVICE)
+Driver                   : \SystemRoot\System32\drivers\WinUSB.SYS (Version: 10.0.19041.1  Date: 2019-12-07  Company: Microsoft Corporation)
+Driver Inf               : C:\Windows\inf\oem127.inf
+Legacy BusType           : PNPBus
+Class                    : USBDevice
+Class GUID               : {88bae032-5a81-49f0-bc3d-a4ff138216d6} (GUID_DEVCLASS_USBDEVICE)
+Service                  : WinUSB
+Enumerator               : USB
+Location Info            : 0000.0014.0000.004.000.000.000.000.000
+Address                  : 7
+Manufacturer Info        : Microdia
+Capabilities             : 0x00 (-)
+Status                   : 0x0180200A (DN_DRIVER_LOADED, DN_STARTED, DN_DISABLEABLE, DN_NT_ENUMERATOR, DN_NT_DRIVER)
+Problem Code             : 0
+First Install Date       : 2025-08-01 22:04:18
+Last Arrival Date        : 2025-08-05 08:22:18
+EnhancedPowerMgmtEnabled : 0
+Power State              : D0 (supported: D0, D3, wake from D0)

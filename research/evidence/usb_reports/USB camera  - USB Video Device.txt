@@ -1,0 +1,29 @@
+
+        +++++++++++++++++ Device Information ++++++++++++++++++
+Friendly Name            : USB Camera
+Device Description       : USB Video Device
+Device Path 1            : \\?\USB#VID_0C45&PID_6366&MI_00#6&183af011&0&0000#{e5323777-f976-4f5b-9b55-b94699c46e44}\global (STATIC_KSCATEGORY_VIDEO_CAMERA)
+Device Path 2            : \\?\USB#VID_0C45&PID_6366&MI_00#6&183af011&0&0000#{65e8773d-8f56-11d0-a3b9-00a0c9223196}\global (AM_KSCATEGORY_CAPTURE)
+Device Path 3            : \\?\USB#VID_0C45&PID_6366&MI_00#6&183af011&0&0000#{6994ad05-93ef-11d0-a3cc-00a0c9223196}\global (AM_KSCATEGORY_VIDEO)
+Kernel Name              : \Device\000000e4
+Device ID                : USB\VID_0C45&PID_6366&MI_00\6&183AF011&0&0000
+Hardware IDs             : USB\VID_0C45&PID_6366&REV_0100&MI_00 USB\VID_0C45&PID_6366&MI_00
+Driver KeyName           : {ca3e7ab9-b4c3-4ae6-8251-579ef933890f}\0001 (GUID_DEVCLASS_CAMERA)
+Driver                   : \SystemRoot\System32\Drivers\usbvideo.sys (Version: 10.0.19041.6033  Date: 2025-07-09  Company: Microsoft Corporation)
+Driver Inf               : C:\Windows\inf\usbvideo.inf
+Legacy BusType           : PNPBus
+Class                    : Camera
+Class GUID               : {ca3e7ab9-b4c3-4ae6-8251-579ef933890f} (GUID_DEVCLASS_CAMERA)
+Service                  : usbvideo
+Enumerator               : USB
+Location Info            : 0000.0014.0000.004.000.000.000.000.000
+Address                  : 4
+Manufacturer Info        : Microsoft
+Capabilities             : 0xA4 (Removable, SilentInstall, SurpriseRemovalOK)
+Status                   : 0x0180600A (DN_DRIVER_LOADED, DN_STARTED, DN_DISABLEABLE, DN_REMOVABLE, DN_NT_ENUMERATOR, DN_NT_DRIVER)
+Problem Code             : 0
+Lower Filters            : WdmCompanionFilter
+First Install Date       : 2025-08-01 22:04:18
+Last Arrival Date        : 2025-08-05 08:22:37
+EnhancedPowerMgmtEnabled : 0
+Power State              : D3 (supported: D0, D3, wake from D0)
