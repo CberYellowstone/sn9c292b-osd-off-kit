@@ -392,12 +392,15 @@ async function refreshRemoteStreams() {
 
   const streams = await response.json();
   const current = ui.remoteSource.value;
+  const streamNames = Object.keys(streams)
+    .filter((name) => !name.endsWith("_mjpeg_source"))
+    .sort();
   ui.remoteStreamSelect.replaceChildren(new Option("远端流", ""));
-  for (const name of Object.keys(streams).sort()) {
+  for (const name of streamNames) {
     ui.remoteStreamSelect.appendChild(new Option(name, name));
   }
-  ui.remoteStreamSelect.value = streams[current] ? current : "";
-  setStatus(`远端流: ${Object.keys(streams).length}`);
+  ui.remoteStreamSelect.value = streamNames.includes(current) ? current : "";
+  setStatus(`远端流: ${streamNames.length}`);
 }
 
 async function connectRemoteStream() {
