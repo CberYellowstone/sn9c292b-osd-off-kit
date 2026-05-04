@@ -11,4 +11,8 @@
 *.md text
 *.py text
 *.sh text eol=lf
-
+*.html text
+*.css text
+*.js text
+*.json text
+*.glsl text

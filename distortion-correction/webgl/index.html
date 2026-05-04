@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>SN9C292B WebGL Fisheye Preview</title>
+    <link rel="icon" href="data:," />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <main class="stage-wrap">
+      <canvas id="preview" width="1920" height="1080"></canvas>
+      <video id="sourceVideo" playsinline muted></video>
+    </main>
+
+    <section class="toolbar" aria-label="预览控制">
+      <div class="row">
+        <button id="startButton" type="button">启动摄像头</button>
+        <select id="cameraSelect" aria-label="摄像头"></select>
+        <span id="status">未启动</span>
+        <button id="hideToolbarButton" class="spacer-left" type="button">隐藏控制</button>
+      </div>
+      <div class="row remote-controls">
+        <label class="text-field">
+          go2rtc
+          <input id="remoteBase" type="url" value="http://127.0.0.1:1984" spellcheck="false" />
+        </label>
+        <label class="text-field">
+          src
+          <input id="remoteSource" type="text" value="sn9c292b_h264_qsv" spellcheck="false" />
+        </label>
+        <select id="remoteStreamSelect" aria-label="远端流">
+          <option value="">远端流</option>
+        </select>
+        <button id="remoteRefreshButton" type="button">刷新远端</button>
+        <button id="remoteConnectButton" type="button">连接远端流</button>
+      </div>
+      <div class="row controls">
+        <label>
+          balance
+          <input id="balance" type="range" min="0" max="1" step="0.01" value="1" />
+          <output id="balanceValue">1.00</output>
+        </label>
+        <label>
+          zoom
+          <input id="zoom" type="range" min="0.65" max="1.8" step="0.01" value="1.02" />
+          <output id="zoomValue">1.02</output>
+        </label>
+        <label>
+          fps cap
+          <input id="fpsCap" type="range" min="15" max="60" step="1" value="60" />
+          <output id="fpsCapValue">60</output>
+        </label>
+      </div>
+      <div class="row presets" aria-label="校正预设">
+        <button id="presetWideButton" type="button" data-preset="wide">全视野</button>
+        <button id="presetCropButton" type="button" data-preset="crop">裁切</button>
+      </div>
+      <div class="row stats">
+        <span id="fps">draw fps: --</span>
+        <span id="resolution">source: --</span>
+        <span id="model">model: fisheye_kannala_brandt_4</span>
+      </div>
+    </section>
+    <button id="showToolbarButton" class="show-toolbar" type="button" aria-label="显示预览控制">
+      显示控制
+    </button>
+
+    <script type="module" src="./app.js"></script>
+  </body>
+</html>

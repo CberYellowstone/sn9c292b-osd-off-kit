@@ -36,6 +36,19 @@
 - `runtime/nas-systemd/sn9c292b-osd-off.service`
 - `runtime/nas-systemd/90-sn9c292b-osd-off.rules`
 
+## 畸变修正
+
+- `distortion-correction/README.md`
+- `distortion-correction/webgl/index.html`
+- `distortion-correction/webgl/app.js`
+- `distortion-correction/webgl/go2rtc-webrtc.js`
+- `distortion-correction/webgl/styles.css`
+- `distortion-correction/webgl/shaders/fisheye_kb4.frag.glsl`
+- `distortion-correction/calibration/fine_calibration_models_sanitized.json`
+- `distortion-correction/calibration-tools/*.py`
+- `distortion-correction/live-tools/fisheye_live_mjpeg_server.py`
+- `docs/DISTORTION_CORRECTION.md`
+
 ## 研究资料
 
 - `research/evidence/*.md`

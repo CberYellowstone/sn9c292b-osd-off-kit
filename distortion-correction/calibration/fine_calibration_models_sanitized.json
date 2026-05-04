@@ -1,0 +1,257 @@
+{
+  "schema": "sn9c292b_distortion_model_sanitized_v1",
+  "image_size": {
+    "width": 1920,
+    "height": 1080
+  },
+  "pattern": {
+    "inner_corners_cols": 9,
+    "inner_corners_rows": 6,
+    "square_size_units": 1.0
+  },
+  "valid_images": 27,
+  "recommended_model": "fisheye_kannala_brandt_4",
+  "recommendation_reason": "The rational model has the lowest RMS, but its radial coefficients are very large and likely overfit. The fisheye model is within 3% RMS, uses a compact 4-coefficient wide-angle model, and gives more stable borders.",
+  "models": [
+    {
+      "name": "pinhole_radial_k1k2_no_tangent",
+      "family": "pinhole",
+      "rms_reprojection_error": 1.9948743652149583,
+      "mean_per_view_error": 0.26053851869797695,
+      "max_per_view_error": 0.43919473111070645,
+      "camera_matrix": [
+        [
+          1035.329538435142,
+          0.0,
+          956.1668431313944
+        ],
+        [
+          0.0,
+          1044.5310636301979,
+          537.0967562425205
+        ],
+        [
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "dist_coeffs": [
+        -0.2947248410728202,
+        0.059500081897690675,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "fov_degrees": {
+        "horizontal_deg": 85.67588635893767,
+        "vertical_deg": 54.675974591685915
+      },
+      "optimal_new_camera_matrix": {
+        "alpha_0_5": {
+          "matrix": [
+            [
+              664.2126664469256,
+              0.0,
+              955.2163923266214
+            ],
+            [
+              0.0,
+              809.7950197026516,
+              536.8922304384714
+            ],
+            [
+              0.0,
+              0.0,
+              1.0
+            ]
+          ],
+          "roi": [
+            11,
+            81,
+            1900,
+            918
+          ]
+        }
+      }
+    },
+    {
+      "name": "pinhole_brown_5",
+      "family": "pinhole",
+      "rms_reprojection_error": 1.0223214536647771,
+      "mean_per_view_error": 0.12794513445707445,
+      "max_per_view_error": 0.34414929795106625,
+      "camera_matrix": [
+        [
+          998.3282212238112,
+          0.0,
+          965.1447980820409
+        ],
+        [
+          0.0,
+          1000.2941213000479,
+          542.418398787021
+        ],
+        [
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "dist_coeffs": [
+        -0.33841605094625904,
+        0.11258520304429781,
+        -0.0005659419778633273,
+        -0.0001112236241203146,
+        -0.017323219210029734
+      ],
+      "fov_degrees": {
+        "horizontal_deg": 87.75751077109638,
+        "vertical_deg": 56.724004696924034
+      },
+      "optimal_new_camera_matrix": {
+        "alpha_0_5": {
+          "matrix": [
+            [
+              632.4256948944633,
+              0.0,
+              739.6730376381583
+            ],
+            [
+              0.0,
+              624.3901893189347,
+              533.8655023957292
+            ],
+            [
+              0.0,
+              0.0,
+              1.0
+            ]
+          ],
+          "roi": [
+            128,
+            195,
+            1216,
+            674
+          ]
+        }
+      }
+    },
+    {
+      "name": "pinhole_rational_8",
+      "family": "pinhole",
+      "rms_reprojection_error": 0.784718668224506,
+      "mean_per_view_error": 0.08673124648140298,
+      "max_per_view_error": 0.3066037371828252,
+      "camera_matrix": [
+        [
+          990.9789449275551,
+          0.0,
+          964.1756397477236
+        ],
+        [
+          0.0,
+          990.4008916658815,
+          541.4266204485143
+        ],
+        [
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "dist_coeffs": [
+        68.68063463942077,
+        35.13028293982741,
+        -0.0004858726806003843,
+        7.509194022562817e-05,
+        1.5683757128646465,
+        68.72218297809228,
+        61.980877169884664,
+        9.378673459179305,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "fov_degrees": {
+        "horizontal_deg": 88.18059169702175,
+        "vertical_deg": 57.2014184962365
+      },
+      "optimal_new_camera_matrix": {
+        "alpha_0_5": {
+          "matrix": [
+            [
+              511.57835808628795,
+              0.0,
+              973.0210779892361
+            ],
+            [
+              0.0,
+              659.3493270138756,
+              538.7856497367794
+            ],
+            [
+              0.0,
+              0.0,
+              1.0
+            ]
+          ],
+          "roi": [
+            108,
+            130,
+            1707,
+            815
+          ]
+        }
+      }
+    },
+    {
+      "name": "fisheye_kannala_brandt_4",
+      "family": "fisheye",
+      "rms_reprojection_error": 0.7906566260671809,
+      "mean_per_view_error": 0.08713100868975315,
+      "max_per_view_error": 0.30507435268988603,
+      "camera_matrix": [
+        [
+          994.9971032102981,
+          0.0,
+          964.9142904632592
+        ],
+        [
+          0.0,
+          994.4029012066164,
+          537.2073189018432
+        ],
+        [
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "dist_coeffs": [
+        -0.054103821798074554,
+        -0.04128019290365484,
+        0.030639291846282588,
+        -0.01163989139853635
+      ],
+      "fov_degrees": {
+        "horizontal_deg": 87.94887454929125,
+        "vertical_deg": 57.007411350476154
+      }
+    }
+  ],
+  "runtime_presets": {
+    "wide": {
+      "balance": 1.0,
+      "zoom": 1.02
+    },
+    "crop": {
+      "balance": 1.0,
+      "zoom": 1.62
+    }
+  },
+  "privacy_note": "Image filenames, corner records, annotated images, sample images and videos were intentionally omitted."
+}

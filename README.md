@@ -35,6 +35,7 @@
 - `docs/FLASHING_WINDOWS_GUI.md`
 - `docs/FIRMWARE_NOTES.md`
 - `docs/RECOVERY.md`
+- `docs/DISTORTION_CORRECTION.md`
 
 ## 运行时临时关闭
 
@@ -77,6 +78,8 @@ runtime/
   windows/                       Windows XU 运行时 OSD 控制工具
   linux/                         Linux SONiX_UVC_TestAP 二进制和源码片段
   nas-systemd/                   NAS/Linux 热插拔自动关闭 OSD 示例
+
+distortion-correction/           当前可用的畸变修正成品和工具代码
 
 research/
   evidence/                      本次研究过程和失败路线记录
